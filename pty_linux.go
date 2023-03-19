@@ -7,6 +7,11 @@ import (
 	"unsafe"
 )
 
+type (
+	_C_int  int32
+	_C_uint uint32
+)
+
 func open() (pty, tty *os.File, err error) {
 	p, err := os.OpenFile("/dev/ptmx", os.O_RDWR, 0)
 	if err != nil {
